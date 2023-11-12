@@ -31,6 +31,10 @@ body {
 	animation:peach_alive linear 8s infinite;
 }
 
+.d_flag_bg{
+	background-image: url('../../assets/images/background/d_flag_bg.png');
+}
+
 @-webkit-keyframes peach_alive {
 	0%{
 		background-color: #FFDAB9;
@@ -1390,15 +1394,15 @@ audio {
 	  }
 	  
 	  .image1 {
-		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52qqyY2Mosgxt-Pt00pZy4TqIhCanFTwyLwC-D0z5&s");
+		background-image: url("../images/my/1.jpg");
 	  }
 	  
 	  .image2 {
-		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52qqyY2Mosgxt-Pt00pZy4TqIhCanFTwyLwC-D0z5&s");
+		background-image: url("../images/my/2.jpg");
 	  }
 	  
 	  .image3 {
-		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52qqyY2Mosgxt-Pt00pZy4TqIhCanFTwyLwC-D0z5&s");
+		background-image: url("../images/my/6.jpg");
 	  }
 	  
 	  svg {

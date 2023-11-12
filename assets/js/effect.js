@@ -50,7 +50,7 @@ $('document').ready(function(){
 		$(this).fadeOut('slow').delay(6000).promise().done(function(){
 			$('#balloons_flying').fadeIn('slow');
 		});
-		$('.hbd_container').css('background-image', 'url("../../d_flag_bg.png")');
+		$('.hbd_container').addClass('d_flag_bg');
 		$('.container_hbp_image').fadeIn('slow').css('display','flex');
 		$('.gallery').fadeIn('slow').css('display','grid');
 	});
