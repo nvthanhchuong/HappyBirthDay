@@ -52,7 +52,17 @@ $('document').ready(function(){
 		});
 		$('.hbd_container').addClass('d_flag_bg');
 		$('.container_hbp_image').fadeIn('slow').css('display','flex');
+		const images = document.querySelectorAll('.gallery > img');
+	
+		// Thay đổi kích thước hình ảnh ngẫu nhiên
+		images.forEach(img => {
+		  const randomSize = Math.random() * (320 - 180) + 240; // Tạo kích thước ngẫu nhiên từ 200px đến 300px
+		  img.style.width = `${randomSize}px`; // Áp dụng kích thước ngẫu nhiên
+		  img.style.height = `${randomSize}px`; // Đảm bảo chiều cao giữ tỉ lệ đúng
+		});
+	  
 		$('.gallery').fadeIn('slow').css('display','grid');
+
 
 		// Tạo mảng chứa bông tuyết
 		let snowflakes = [];
@@ -84,6 +94,7 @@ $('document').ready(function(){
 		// Tạo bông tuyết sau mỗi 100ms
 		setInterval(createSnowflake, 100);
 
+		
 	});
 
 	function loopOne() {
