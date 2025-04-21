@@ -53,6 +53,37 @@ $('document').ready(function(){
 		$('.hbd_container').addClass('d_flag_bg');
 		$('.container_hbp_image').fadeIn('slow').css('display','flex');
 		$('.gallery').fadeIn('slow').css('display','grid');
+
+		// Tạo mảng chứa bông tuyết
+		let snowflakes = [];
+
+		// Hàm tạo bông tuyết
+		function createSnowflake() {
+		  const snowflake = document.createElement("div");
+		  snowflake.classList.add("snowflake");
+		  snowflake.style.left = Math.random() * window.innerWidth + "px";
+		  snowflake.style.animationDuration = 4 + Math.random() * 5 + "s";  // Tăng thời gian để giảm tốc độ rơi
+		  snowflake.style.opacity = Math.random();
+		  snowflake.style.fontSize = 10 + Math.random() * 20 + "px";
+		  
+		  // Tạo màu ngẫu nhiên cho mỗi bông tuyết
+		  const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33F1', '#F1FF33'];
+		  snowflake.style.color = colors[Math.floor(Math.random() * colors.length)];
+	
+		  snowflake.innerHTML = "❄";
+		  document.body.appendChild(snowflake);
+		  snowflakes.push(snowflake);
+	
+		  // Xóa bông tuyết sau 9 giây
+		  setTimeout(() => {
+			snowflake.remove();
+			snowflakes.shift();
+		  }, 9000); // Thời gian sống của bông tuyết
+		}
+	
+		// Tạo bông tuyết sau mỗi 100ms
+		setInterval(createSnowflake, 100);
+
 	});
 
 	function loopOne() {
@@ -175,9 +206,12 @@ $('document').ready(function(){
 	
 	$('#story').click(function(){
 		$(this).fadeOut('slow');
-		$('.cake').fadeOut('fast').promise().done(function(){
-			$('.message').fadeIn('slow');
-		});
+		// $('.cake').fadeOut('fast').promise().done(function(){
+		// 	$('.message').fadeIn('slow');
+		// });
+
+		$('.message').fadeIn('slow');
+
 		
 		var i;
 
