@@ -54,12 +54,13 @@ $('document').ready(function(){
 		$('.container_hbp_image').fadeIn('slow').css('display','flex');
 		const images = document.querySelectorAll('.gallery > img');
 	
-		// Thay đổi kích thước hình ảnh ngẫu nhiên
-		images.forEach(img => {
-		  const randomSize = Math.random() * (320 - 180) + 240; // Tạo kích thước ngẫu nhiên từ 200px đến 300px
-		  img.style.width = `${randomSize}px`; // Áp dụng kích thước ngẫu nhiên
-		  img.style.height = `${randomSize}px`; // Đảm bảo chiều cao giữ tỉ lệ đúng
-		});
+	// Thay đổi kích thước hình ảnh ngẫu nhiên từ 180px đến 320px
+	images.forEach(img => {
+		const randomSize = Math.random() * (320 - 180) + 180; // Kích thước ngẫu nhiên từ 180px đến 320px
+		img.style.width = `${randomSize}px`; // Áp dụng chiều rộng ngẫu nhiên
+		img.style.height = `${randomSize}px`; // Đảm bảo chiều cao giữ tỉ lệ đúng
+	});
+	
 	  
 		$('.gallery').fadeIn('slow').css('display','grid');
 
