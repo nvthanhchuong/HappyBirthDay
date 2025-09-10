@@ -38,28 +38,28 @@
 		   Your browser isn't invited for super fun audio time.
 		</audio>
 		<div class="balloons text-center" id="b1">
-			<h2 style="color:#F2B300;">H</h2>
+			<h2 style="color:#F2B300;">T</h2>
 		</div>
 		<div class="balloons text-center" id="b2">
-			<h2 style="color:#0719D4;">P</h2>
+			<h2 style="color:#0719D4;">R</h2>
 		</div>
 		<div class="balloons text-center" id="b3">
-			<h2 style="color:#D14D39;">B</h2>
+			<h2 style="color:#D14D39;">À</h2>
 		</div>
 		<div class="balloons text-center" id="b4">
-			<h2 style="color:#8FAD00;">D</h2>
+			<h2 style="color:#8FAD00;">G</h2>
 		</div>
 		<div class="balloons text-center" id="b5">
-			<h2 style="color:#8377E4;">N</h2>
+			<h2 style="color:#8377E4;">I</h2>
 		</div>
 		<div class="balloons text-center" id="b6">
-			<h2 style="color:#99C96A;">H</h2>
+			<h2 style="color:#99C96A;">A</h2>
 		</div>
 		<div class="balloons text-center" id="b7">
-			<h2 style="color:#20CFB4;">Ư</h2>
+			<h2 style="color:#20CFB4;">N</h2>
 		</div>
 		<div class="balloons text-center" id="b8">
-			<h2 style="color:#F2B300;">Ý</h2>
+			<h2 style="color:#F2B300;">G</h2>
 		</div>
 	
 		<img src="./assets/images/bulb/Balloon-Border.png" width="100%" class="balloon-border">
@@ -108,7 +108,7 @@
 			</div>
 			<div class="row message">
 				<div class="col-md-12" style="z-index: 999; margin-top: 250px;">
-					<p>Hôm nay...</p>
+				  <p>Hôm nay...</p>
 				  <p>vẫn đẹp như bao ngày khác</p>
 				  <p>nhưng anh chợt nhận ra rằng</p>
 				  <p>một năm nữa đã trôi qua</p>
@@ -153,44 +153,23 @@
 				  <p>anh muốn nói một lần nữa</p>
 				  <p>Chúc mừng sinh nhật em yêu 💕</p>
 				</div>
-			</div>
-			<div class="navbar navbar-fixed-bottom">
-				<div class="row">
-					<div class="col-md-6 text-center col-md-offset-3">
-						<button class="btn-birthday" id="turn_on">
-							<i class="fas fa-lightbulb"></i> Thắp Sáng Đèn
-						  </button>
-						  
-						  <button class="btn-birthday" id="play">
-							<i class="fas fa-music"></i> Phát Nhạc
-						  </button>
-						  
-						  <button class="btn-birthday" id="bannar_coming">
-							<i class="fas fa-ribbon"></i> Trang Trí
-						  </button>
-						  
-						  <button class="btn-birthday" id="balloons_flying">
-							<i class="fas fa-balloon"></i>🎈 Bong Bóng Bay
-						  </button>
-						  
-						  <button class="btn-birthday" id="cake_fadein">
-							<i class="fas fa-birthday-cake"></i> Bánh Sinh Nhật
-						  </button>
-						  
-						  <button class="btn-birthday" id="light_candle">
-							<i class="fas fa-fire"></i> Thắp Nến
-						  </button>
-						  
-						  <button class="btn-birthday" id="wish_message">
-							<i class="fas fa-gift"></i> Chúc Mừng Sinh Nhật
-						  </button>
-						  
-						  <button class="btn-birthday" id="story">
-							<i class="fas fa-heart"></i> Lời Nhắn
-						  </button>
-					</div>
-				</div>
-			</div>	
+			  </div>
+			  
+  <div class="navbar navbar-fixed-bottom">
+    <div class="row">
+      <div class="col-md-6 text-center col-md-offset-3">
+        <button class="btn" id="turn_on">💡 Thắp Sáng Đèn</button>
+        <button class="btn" id="play">🎶 Phát Nhạc</button>
+        <button class="btn" id="bannar_coming">🎉 Trang Trí</button>
+        <button class="btn" id="balloons_flying">🎈 Bong Bóng Bay</button>
+        <button class="btn" id="cake_fadein">🎂 Bánh Sinh Nhật</button>
+        <button class="btn" id="light_candle">🕯️ Thắp Nến</button>
+        <button class="btn" id="wish_message">✨ Chúc Mừng Sinh Nhật</button>
+        <button class="btn" id="story">💌 Lời Nhắn</button>
+      </div>
+    </div>
+  </div>
+
 		</div>
 		<div class="container_hbp_image">
 			<div style="width: 100%; display: flex; justify-content: center;">
@@ -237,5 +216,213 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="./assets/js/effect.js"></script> 
+<script src="./assets/js/effect.js"></script>
+<style>
+  /* Canvas để vẽ pháo hoa */
+  canvas#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+</style>
+
+<canvas id="fireworks"></canvas>
+
+<script>
+  const canvas = document.getElementById("fireworks");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let fireworksInterval;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor(x, y, color, speed, angle) {
+      this.x = x;
+      this.y = y;
+      this.color = color;
+      this.speed = speed;
+      this.angle = angle;
+      this.alpha = 1;
+      this.radius = 2 + Math.random() * 2;
+    }
+    update() {
+      this.x += this.speed * Math.cos(this.angle);
+      this.y += this.speed * Math.sin(this.angle);
+      this.alpha -= 0.02;
+    }
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.closePath();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function createFirework(x, y) {
+    const colors = ["#ff4e50", "#f9d423", "#00c3ff", "#ff9a9e", "#8aff80", "#ffd700", "#ff69b4"];
+    for (let i = 0; i < 60; i++) {
+      const angle = Math.random() * 2 * Math.PI;
+      const speed = Math.random() * 5 + 2;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      particles.push(new Particle(x, y, color, speed, angle));
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, index) => {
+      p.update();
+      p.draw();
+      if (p.alpha <= 0) {
+        particles.splice(index, 1);
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Khi nhấn nút Trang Trí → liên tục bắn pháo hoa
+  document.getElementById("bannar_coming").addEventListener("click", () => {
+    if (fireworksInterval) return; // tránh tạo nhiều lần
+    fireworksInterval = setInterval(() => {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * (canvas.height / 2);
+      createFirework(x, y);
+    }, 800); // bắn pháo hoa mỗi 0.8s
+  });
+</script>
+
+
+ <style>
+    .navbar {
+      background: transparent;
+      border: none;
+      margin-bottom: 30px;
+    }
+
+    .navbar .btn {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 12px 20px;
+      margin: 8px;
+      border-radius: 50px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.6),
+                  0 0 30px rgba(255, 165, 0, 0.4);
+      transition: all 0.3s ease-in-out;
+      animation: pulse 2s infinite;
+      cursor: pointer;
+    }
+
+    .navbar .btn:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 0 25px rgba(255, 20, 147, 0.8),
+                  0 0 40px rgba(255, 165, 0, 0.6);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 165, 0, 0.4); }
+      50% { box-shadow: 0 0 25px rgba(0, 191, 255, 0.8), 0 0 40px rgba(255, 255, 0, 0.7); }
+      100% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 165, 0, 0.4); }
+    }
+
+    /* Confetti nhỏ khi hover nút */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: red;
+      top: 50%;
+      left: 50%;
+      opacity: 0.9;
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: fall 1s linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(calc(-50% + (var(--x) * 1px)), calc(200% + (var(--y) * 1px))) rotate(720deg) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Confetti toàn màn hình */
+    .confetti-piece {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.9;
+      transform: rotate(45deg);
+      animation: fallDown linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fallDown {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+
+  <script>
+    // Hiệu ứng confetti nhỏ khi hover vào nút
+    document.querySelectorAll(".navbar .btn").forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        for (let i = 0; i < 10; i++) {
+          const confetti = document.createElement("span");
+          confetti.classList.add("confetti");
+          confetti.style.backgroundColor = ["#ff4e50", "#f9d423", "#00c3ff", "#ff9a9e", "#8aff80"][Math.floor(Math.random() * 5)];
+          confetti.style.setProperty("--x", (Math.random() - 0.5) * 200);
+          confetti.style.setProperty("--y", Math.random() * 200);
+          btn.appendChild(confetti);
+
+          setTimeout(() => confetti.remove(), 1000);
+        }
+      });
+    });
+
+    // Hiệu ứng confetti toàn màn hình khi bấm "Chúc Mừng Sinh Nhật"
+    const wishBtn = document.getElementById("wish_message");
+    wishBtn.addEventListener("click", () => {
+      for (let i = 0; i < 150; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti-piece");
+
+        const colors = ["#ff4e50", "#f9d423", "#00c3ff", "#ff9a9e", "#8aff80", "#ffd700", "#ff69b4"];
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        const size = Math.random() * 8 + 6;
+        confetti.style.width = size + "px";
+        confetti.style.height = size + "px";
+
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+      }
+    });
+  </script>
+
 </html>

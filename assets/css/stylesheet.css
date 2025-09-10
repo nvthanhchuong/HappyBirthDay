@@ -1,5 +1,5 @@
 body {
-	/*background-color: #FFDAB9;	*/
+	/*background-color: #fff0f6;	*/
 	background-color: #000;
 	-webkit-transition:background-color linear 5s;
 	-moz-transition:background-color linear 5s;
@@ -20,89 +20,110 @@ body {
 	display: none;
 }
 .peach {
-	background-color: #FFE5B4; /* sáng hơn */
+	background-color: #fff0f6;
+	
 }
-
 .peach-after {
-	-webkit-animation: peach_alive linear 8s infinite;
-	-moz-animation: peach_alive linear 8s infinite;
-	-o-animation: peach_alive linear 8s infinite;
-	-ms-animation: peach_alive linear 8s infinite;
-	animation: peach_alive linear 8s infinite;
+	-webkit-animation:peach_alive linear 8s infinite;
+	-moz-animation:peach_alive linear 8s infinite;
+	-o-animation:peach_alive linear 8s infinite;
+	-ms-animation:peach_alive linear 8s infinite;
+	animation:peach_alive linear 8s infinite;
 }
-
-@keyframes peach_alive {
-	0% {
-		background-color: #FFE5B4;
-	}
-	25% {
-		background-color: #FFF0D9;
-	}
-	50% {
-		background-color: #FFF5EC;
-	}
-	75% {
-		background-color: #FFEFD5;
-	}
-	100% {
-		background-color: #FFE5B4;
-	}
-}
-
-/* Vendor prefixes */
-@-webkit-keyframes peach_alive {
-	0% { background-color: #FFE5B4; }
-	25% { background-color: #FFF0D9; }
-	50% { background-color: #FFF5EC; }
-	75% { background-color: #FFEFD5; }
-	100% { background-color: #FFE5B4; }
-}
-@-moz-keyframes peach_alive {
-	0% { background-color: #FFE5B4; }
-	25% { background-color: #FFF0D9; }
-	50% { background-color: #FFF5EC; }
-	75% { background-color: #FFEFD5; }
-	100% { background-color: #FFE5B4; }
-}
-@-o-keyframes peach_alive {
-	0% { background-color: #FFE5B4; }
-	25% { background-color: #FFF0D9; }
-	50% { background-color: #FFF5EC; }
-	75% { background-color: #FFEFD5; }
-	100% { background-color: #FFE5B4; }
-}
-@-ms-keyframes peach_alive {
-	0% { background-color: #FFE5B4; }
-	25% { background-color: #FFF0D9; }
-	50% { background-color: #FFF5EC; }
-	75% { background-color: #FFEFD5; }
-	100% { background-color: #FFE5B4; }
-}
-
 
 .d_flag_bg{
 	background-image: url('../../assets/images/background/d_flag_bg.png');
 }
 
-.snowflake {
-    position: fixed;
-    top: -10px;
-    color: #fff;
-    z-index: 9999;
-    user-select: none;
-    pointer-events: none;
-    animation-name: fall;
-    animation-timing-function: linear;
-  }
+@-webkit-keyframes peach_alive {
+	0%{
+		background-color: #fff0f6;
+	}
+	25%{
+		background-color: #FFE4B5;
+	}
+	50%{
+		background-color: #fff0f6;
+	}
+	75%{
+		background-color: #FFEFD5;
+	}
+	100%{
+		background-color: #fff0f6;
+	}
+}
+@-moz-keyframes peach_alive {
+	0%{
+		background-color: #fff0f6;
+	}
+	25%{
+		background-color: #FFE4B5;
+	}
+	50%{
+		background-color: #fff0f6;
+	}
+	75%{
+		background-color: #FFEFD5;
+	}
+	100%{
+		background-color: #fff0f6;
+	}
+}
 
-  @keyframes fall {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
-  }
+@-o-keyframes peach_alive {
+	0%{
+		background-color: #fff0f6;
+	}
+	25%{
+		background-color: #FFE4B5;
+	}
+	50%{
+		background-color: #fff0f6;
+	}
+	75%{
+		background-color: #FFEFD5;
+	}
+	100%{
+		background-color: #fff0f6;
+	}
+}
+
+@-ms-keyframes peach_alive {
+	0%{
+		background-color: #fff0f6;
+	}
+	25%{
+		background-color: #FFE4B5;
+	}
+	50%{
+		background-color: #fff0f6;
+	}
+	75%{
+		background-color: #FFEFD5;
+	}
+	100%{
+		background-color: #fff0f6;
+	}
+}
+
+@keyframes peach_alive {
+	0%{
+		background-color: #fff0f6;
+	}
+	25%{
+		background-color: #FFE4B5;
+	}
+	50%{
+		background-color: #fff0f6;
+	}
+	75%{
+		background-color: #FFEFD5;
+	}
+	100%{
+		background-color: #fff0f6;
+	}
+}
+
 
 .bulb {
 	width: 50px;
@@ -1308,157 +1329,133 @@ audio {
     	}
     }*/
 
-	.btn-birthday {
-		background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-		color: white;
-		border: none;
-		border-radius: 50px;
-		padding: 12px 24px;
-		font-size: 16px;
-		font-weight: bold;
-		box-shadow: 0 8px 16px rgba(255, 105, 135, 0.3);
-		transition: all 0.3s ease;
-		display: inline-flex;
+
+
+/*Image of you*/
+	.container_hbp_image {
+		width: 550px;
+		display: flex;
+		justify-content: center;
 		align-items: center;
-		gap: 10px;
-		margin-bottom: 20px;
+		flex-wrap: wrap;
+		position: absolute;
+		bottom: 20px;
+		left: 100px;
+		z-index: -1;
+		display: none;
 	  }
 	  
-	  .btn-birthday:hover {
-		background: linear-gradient(135deg,#ff3366, #fbc2eb);
-		box-shadow: 0 12px 24px rgba(170, 115, 255, 0.3);
-		transform: scale(1.05);
+	  .container_hbp_image .card {
+		position: relative;
+		width: 180px;
+		height: 250px;
+		margin: 10px;
 	  }
 	  
+	  .container_hbp_image .card:nth-of-type(2) {
+		transform: rotate(5deg);
+	  }
+	  
+	  .container_hbp_image .card .image {
+		position: relative;
+		width: 80%;
+		height: 80%;
+		background-size: cover;
+		transform: translate(10px, 10px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+	  
+	  .container_hbp_image .card:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 155px;
+		height: 225px;
+		border: 25px solid #fff;
+		z-index: 1;
+		background: linear-gradient(145deg, #ffffff, #e6e6e6);
+		box-shadow: 7px 7px 21px #bdbdbd, -7px -7px 21px #ffffff;
+		background: transparent;
+	  }
+	  
+	  .container_hbp_image .card:nth-of-type(1)::before {
+		filter: url(#wavy1);
+	  }
+	  
+	  .container_hbp_image .card:nth-of-type(2)::before {
+		filter: url(#wavy2);
+	  }
+	  
+	  .container_hbp_image .card:nth-of-type(3)::before {
+		filter: url(#wavy3);
+	  }
+	  
+	  .image1 {
+		background-image: url("../images/my/1.jpg");
+	  }
+	  
+	  .image2 {
+		background-image: url("../images/my/2.jpg");
+	  }
+	  
+	  .image3 {
+		background-image: url("../images/my/6.jpg");
+	  }
+	  
+	  svg {
+		width: 0;
+		height: 0;
+	  }
+	  .container_hbp_image .card:hover .info {
+		opacity: 1;
+	  }
 
 
-
-/* Container cho các thẻ hình ảnh */
-.container_hbp_image {
-	width: 480px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	position: absolute;
-	bottom: 20px;
-	left: 100px;
-	z-index: -1;
-	display: none; /* Giữ ẩn ban đầu */
-  }
-  
-  /* Các thẻ card chứa hình ảnh */
-  .container_hbp_image .card {
-	position: relative;
-	width: 220px;
-	height: 280px;
-	margin: 10px;
-  }
-  
-  /* Thẻ thứ 2 xoay một chút */
-  .container_hbp_image .card:nth-of-type(2) {
-	transform: rotate(5deg);
-  }
-  
-  /* Hình ảnh trong thẻ card */
-  .container_hbp_image .card .image {
-	position: relative;
-	width: 80%;
-	height: 80%;
-	background-size: cover;
-	transform: translate(10px, 10px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-  
-  /* Viền và hiệu ứng bóng cho card */
-  .container_hbp_image .card:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 190px;
-	height: 240px;
-	border: 25px solid #fff;
-	z-index: 1;
-	background: linear-gradient(145deg, #ffffff, #e6e6e6);
-	box-shadow: 7px 7px 21px #bdbdbd, -7px -7px 21px #ffffff;
-	background: transparent;
-  }
-  
-  /* Áp dụng hiệu ứng sóng cho từng card */
-  .container_hbp_image .card:nth-of-type(1)::before {
-	filter: url(#wavy1);
-  }
-  
-  .container_hbp_image .card:nth-of-type(2)::before {
-	filter: url(#wavy2);
-  }
-  
-  .container_hbp_image .card:nth-of-type(3)::before {
-	filter: url(#wavy3);
-  }
-  
-  /* Các hình ảnh nền */
-  .image1 {
-	background-image: url("../images/my/1.jpg");
-  }
-  
-  .image2 {
-	background-image: url("../images/my/2.jpg");
-  }
-  
-  .image3 {
-	background-image: url("../images/my/6.jpg");
-  }
-  
-  /* SVG để định nghĩa filter sóng */
-  svg {
-	width: 0;
-	height: 0;
-  }
-  
-  /* Hiệu ứng hover để hiển thị thông tin */
-  .container_hbp_image .card:hover .info {
-	opacity: 1;
-  }
-  
-
-
-/* Đặt cấu trúc gallery */
-.gallery {
-	--g: 8px; /* Khoảng cách giữa các hình ảnh */
-	position: absolute;
-	right: 160px;
-	bottom: 100px;
-	display: none; /* Giữ gallery ban đầu là không hiển thị */
-	grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột */
-	grid-gap: var(--g); /* Khoảng cách giữa các hình ảnh */
-	justify-items: center; /* Căn giữa hình ảnh trong mỗi ô */
-	align-items: center;
-	width: 660px; /* Đảm bảo gallery có đủ không gian để chứa tất cả hình ảnh */
-  }
-  
-  /* Thềm viền trắng nghệ thuật cho hình ảnh */
-  .gallery > img {
-	aspect-ratio: 1;
-	object-fit: cover;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-	
-	/* Viền trắng nghệ thuật */
-	border: 10px solid rgba(255, 255, 255, 0.6); /* Khung viền trắng nhẹ */
-	box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Thềm viền trắng nhẹ */
-	background-color: rgba(255, 255, 255, 0.2); /* Tạo màu nền nhẹ giúp hình ảnh nổi bật */
-  }
-  
-  /* Khi hover vào hình ảnh */
-  .gallery > img:hover {
-	transform: scale(1.1); /* Phóng to khi hover */
-	box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Viền trắng rõ hơn khi hover */
-	border: 10px solid rgba(255, 255, 255, 1); /* Viền trắng rõ hơn khi hover */
-	background-color: rgba(255, 255, 255, 0.4); /* Tăng độ sáng nền khi hover */
-  }
-  
+	  /*imgage right*/
+	  .gallery {
+		--g: 8px;   /* the gap */
+		--s: 300px; /* the size */
+		border-radius: 50%;
+		position: absolute;
+		right: 160px;
+		bottom: 100px;
+		display: none;
+	  }
+	  .gallery > img {
+		grid-area: 1/1;
+		width: 400px;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 50%;
+		transform: translate(var(--_x,0),var(--_y,0));
+		cursor: pointer;
+		z-index: 0;
+		transition: .3s, z-index 0s .3s;
+	  }
+	  .gallery img:hover {
+		--_i: 1;
+		z-index: 1;
+		transition: transform .2s, clip-path .3s .2s, z-index 0s;
+	  }
+	  .gallery:hover img {
+		transform: translate(0,0);
+	  }
+	  .gallery > img:nth-child(1) {
+		clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+		--_y: calc(-1*var(--g))
+	  }
+	  .gallery > img:nth-child(2) {
+		clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+		--_x: var(--g)
+	  }
+	  .gallery > img:nth-child(3) {
+		clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+		--_y: var(--g)
+	  }
+	  .gallery > img:nth-child(4) {
+		clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+		--_x: calc(-1*var(--g))
+	  }
